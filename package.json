@@ -1,0 +1,33 @@
+{
+  "name": "edge-controller",
+  "version": "0.0.1",
+  "description": "Edge gateway controller",
+  "keywords": [
+    "pepr",
+    "k8s",
+    "policy-engine",
+    "pepr-module",
+    "security"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "pepr": {
+    "name": "edge-controller",
+    "uuid": "59a692bb-787b-576f-bd1c-c7b8f21b34ec",
+    "onError": "audit",
+    "alwaysIgnore": {
+      "namespaces": [],
+      "labels": []
+    }
+  },
+  "scripts": {
+    "k3d-setup": "k3d cluster delete pepr-dev && k3d cluster create pepr-dev --k3s-arg '--debug@server:0'"
+  },
+  "dependencies": {
+    "pepr": "0.12.0"
+  },
+  "devDependencies": {
+    "typescript": "5.0.4"
+  }
+}
